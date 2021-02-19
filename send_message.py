@@ -28,13 +28,13 @@ def send_message(title, message):
                 n = (i + 1) * 512 - e - 1
             else:
                 data = {
-                    "touser": "@all",
+                    "touser": "@all",   #这里的@all是发送消息给所有人，可以根据企业微信文档的说明发送消息给指定用户
                     "msgtype": "textcard",
                     "agentid": str(agentid),
                     "textcard": {
                         "title": str(title),
                         "description": str(message2.decode("utf-8")),
-                        "url": "URL",
+                        "url": "URL",   #冒号后面的这个URL可以换成任意网址，用户点击收到的消息卡片，就会跳转到此网址，此行不可以删除，此参数好像是必备参数，反正文档里好像这么写的
                     },
                     "duplicate_check_interval": 180,
                 }
