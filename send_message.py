@@ -2,6 +2,8 @@ import requests
 import json
 
 message = ""    #建议把这个加在全部代码的最前面，以防出现变量未定义的报错
+agentid = "xxxx"    #这里填你自建应用的AgentId
+
 
 #直接按照格式调用send_message就可以了
 def send_message(title, message):
@@ -27,7 +29,7 @@ def send_message(title, message):
                 data = {
                     "touser": "@all",
                     "msgtype": "textcard",
-                    "agentid": "1000003",
+                    "agentid": str(agentid),
                     "textcard": {
                         "title": str(title),
                         "description": str(message2.decode("utf-8")),
