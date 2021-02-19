@@ -1,4 +1,5 @@
 # QYWXnotice
+通过企业微信api发送通知消息
 send notice message to your wechat through WECOM
 
 使用方法：先运行QYWX.py获取token码，再调用send_message里的send_message(title, message)函数发送消息即可，理论上可以发送很长的消息，但是企业微信文档内规定是每分钟发送消息数不得超过20条，所以消息长度还是有限制的，而且若一条消息的长度不得超过512个字节（企业微信限制），所以超长的消息会被分为多条发送，上下文应该是完美衔接的。
