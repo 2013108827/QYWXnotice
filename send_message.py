@@ -7,6 +7,7 @@ agentid = "xxxx"    #这里填你自建应用的AgentId
 
 #直接按照格式调用send_message就可以了
 def send_message(title, message):
+    global agentid
     n = ""
     with open('token.txt', 'r') as f:   #默认从当前路径下读取token.txt文件里的access-token码,如果需要指定文件夹请改为'/var/tmp/token.txt'这种格式
         token = f.readline()
